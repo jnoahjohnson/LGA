@@ -41,10 +41,9 @@ const GlobalStyle = createGlobalStyle`
     
 `;
 
-const Page = ({ children, title }) => (
+const Page = ({ children }) => (
   <>
     <GlobalStyle />
-    <Helmet title={title} />
     <NavBar />
     {children}
     <Footer />

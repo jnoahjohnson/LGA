@@ -1,5 +1,6 @@
 import * as React from "react";
 import Fade from "react-reveal/Fade";
+import { Helmet } from "react-helmet";
 import CardGrid from "../componenents/CardGrid";
 import ClassicSection from "../componenents/ClassicSection";
 import Hero from "../componenents/Hero";
@@ -28,7 +29,14 @@ const ContnetContainer = styled.div`
 
 const IndexPage = () => {
   return (
-    <Page title="Logan Growth Advisors">
+    <Page>
+      <Helmet>
+        <title>Logan Growth Advisors</title>
+        <meta
+          name="description"
+          content="Logan Growth Advisors helps business founders win. They have been on all sides of the deals adn have proven expert at increasing deal value, imporoving speed, and defending founders."
+        />
+      </Helmet>
       <main>
         <Hero>
           <ContnetContainer>
