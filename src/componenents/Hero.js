@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import HeroBackground from "../images/HeroBackground.png";
 
 const Hero = styled.div`
   height: 100vh;
-  background: url(${HeroBackground}), rgba(1, 1, 1, 0.25);
+  background: url("https://res.cloudinary.com/dbolbbqw7/image/upload/f_auto/HeroBackground_yw4tot.png"),
+    rgba(1, 1, 1, 0.25);
   background-position: center;
   background-size: cover;
   background-repeat: none;
