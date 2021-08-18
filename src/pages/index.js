@@ -25,6 +25,11 @@ const CenterHeader = styled.h1`
 const ContnetContainer = styled.div`
   max-width: 1200px;
   margin: 0 auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 `;
 
 const IndexPage = () => {
