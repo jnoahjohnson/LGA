@@ -16,15 +16,15 @@ const FooterContentStyles = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-
-  img {
-    width: 200px;
-  }
 `;
 
 const LeftSide = styled.div`
   display: flex;
   flex-direction: column;
+
+  img {
+    width: 200px;
+  }
 
   p {
     font-size: 0.8rem;
@@ -68,7 +68,11 @@ const Footer = () => (
   <FooterStyles>
     <FooterContentStyles>
       <LeftSide>
-        <StaticImage src="../images/LGALogo.png" alt="Logan Growth Advisors" />
+        <StaticImage
+          src="../images/LGALogo.png"
+          alt="Logan Growth Advisors"
+          width={200}
+        />
         <LinkContainer>
           <Link to="/">Privacy Policy</Link>
           <Link to="/">Terms of Use</Link>
