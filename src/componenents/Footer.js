@@ -56,7 +56,7 @@ const RightSide = styled.div`
     margin-bottom: 0.5rem;
     font-size: 1.5rem;
     padding: 0;
-    font-weight: bold;
+    font-weight: 800;
   }
 
   a:hover {

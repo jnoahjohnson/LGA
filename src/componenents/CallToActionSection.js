@@ -13,7 +13,7 @@ const ContentStyles = styled.div`
   h1 {
     text-transform: uppercase;
     font-size: 3.5rem;
-    font-weight: bold;
+    font-weight: 800;
   }
 
   h2 {
