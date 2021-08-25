@@ -97,16 +97,16 @@ const NavBar = ({ fullNav }) => {
           </Link>
         </li>
         <li>
-          <a href="/services">Services</a>
+          <Link to="/services">Services</Link>
         </li>
         <li>
-          <a href="/team">Team</a>
+          <Link to="/team">Team</Link>
         </li>
         <li>
-          <a href="/results">Results</a>
+          <Link to="/results">Results</Link>
         </li>
         <li>
-          <a href="/hiring">Hiring</a>
+          <Link to="/hiring">Hiring</Link>
         </li>
         <Spacer width={20} />
         <Button>Get in Touch</Button>
