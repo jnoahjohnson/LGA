@@ -37,6 +37,11 @@ const ContentStyles = styled.div`
 
 const ImageStyles = styled.div`
   grid-column-start: ${({ gridColumn }) => gridColumn};
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   img {
     width: 100%;
   }
