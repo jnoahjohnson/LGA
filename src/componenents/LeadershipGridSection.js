@@ -1,3 +1,4 @@
+import { navigate } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import React from "react";
 import styled from "styled-components";
@@ -84,7 +85,7 @@ const LeadershipGridSection = () => {
         />
       </GridSection>
       <Spacer height={30} />
-      <Button>Our Team</Button>
+      <Button onClick={() => navigate("/team")}>Our Team</Button>
     </LeadershipGridSectionStyles>
   );
 };

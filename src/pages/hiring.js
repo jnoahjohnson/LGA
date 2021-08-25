@@ -68,6 +68,7 @@ export default function HiringPage() {
               Full-Time Positions
             </SelectorButton>
           </Selectors>
+          <Spacer height={30} />
           {isInternships ? <InternshipSection /> : <FullTimeSection />}
         </HiringPageStyles>
       </main>

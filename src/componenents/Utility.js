@@ -6,12 +6,11 @@ export const Button = styled.button`
   border: none;
   color: white;
   font-size: 1.15rem;
-  box-shadow: var(--defaultShadow);
   transition: box-shadow 0.25s;
   font-weight: 600;
 
   &:hover {
-    box-shadow: var(--heavyShadow);
+    box-shadow: var(--defaultShadow);
   }
 `;
 

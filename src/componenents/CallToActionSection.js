@@ -1,3 +1,4 @@
+import { navigate } from "gatsby";
 import React from "react";
 import styled from "styled-components";
 import ClassicSection from "./ClassicSection";
@@ -40,7 +41,7 @@ const CallToActionSection = () => {
         </h1>
         <h2>See how we will help you win.</h2>
         <Spacer height={25} />
-        <Button>Reach Out</Button>
+        <Button onClick={() => navigate("/contact")}>Reach Out</Button>
       </ContentStyles>
     </SectionStyles>
   );
