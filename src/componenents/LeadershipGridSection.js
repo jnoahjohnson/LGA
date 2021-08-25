@@ -5,8 +5,6 @@ import { Button, Spacer } from "./Utility";
 
 const LeadershipGridSectionStyles = styled.div`
   background: var(--light);
-  box-shadow: inset 0px 0px 7px 4px rgba(0, 0, 0, 0.25);
-  padding: 3rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -28,14 +26,15 @@ const PersonCardStyles = styled.div`
 
   padding: 0.9rem;
 
-  h1 {
+  .name {
     padding: 0;
     font-weight: bold;
     font-size: 2rem;
     margin-top: 0.8rem;
+    color: white;
   }
 
-  h2 {
+  .title {
     font-size: 1.5rem;
     color: var(--accent);
     padding: 0;
@@ -49,8 +48,8 @@ const PersonCardStyles = styled.div`
 const PersonCard = ({ name, title, image }) => (
   <PersonCardStyles>
     {image}
-    <h1>{name}</h1>
-    <h2>{title}</h2>
+    <h1 className="name">{name}</h1>
+    <h2 className="title">{title}</h2>
   </PersonCardStyles>
 );
 

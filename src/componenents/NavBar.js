@@ -69,21 +69,20 @@ const NavBarStyles = styled.nav`
   }
 `;
 
-const NavBar = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
+const NavBar = ({ fullNav }) => {
+  const [isScrolled, setIsScrolled] = useState(fullNav ? true : false);
 
   useEffect(() => {
     if (window != undefined) {
       window.addEventListener("scroll", (e) => {
         let scrollPosition = window.scrollY;
 
-        console.log(scrollPosition, isScrolled);
-
-        if (scrollPosition > 400) {
-          setIsScrolled(true);
-        } else {
-          console.log(false);
-          setIsScrolled(false);
+        if (!fullNav) {
+          if (scrollPosition > 400) {
+            setIsScrolled(true);
+          } else {
+            setIsScrolled(false);
+          }
         }
       });
     }
@@ -98,13 +97,16 @@ const NavBar = () => {
           </Link>
         </li>
         <li>
-          <a href="/">Services</a>
+          <a href="/services">Services</a>
         </li>
         <li>
-          <a href="/">Team</a>
+          <a href="/team">Team</a>
         </li>
         <li>
-          <a href="/">Results</a>
+          <a href="/results">Results</a>
+        </li>
+        <li>
+          <a href="/hiring">Hiring</a>
         </li>
         <Spacer width={20} />
         <Button>Get in Touch</Button>

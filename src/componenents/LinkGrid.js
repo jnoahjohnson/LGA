@@ -1,3 +1,4 @@
+import { navigate } from "gatsby";
 import React from "react";
 import styled from "styled-components";
 
@@ -10,11 +11,12 @@ const LinkCardStyles = styled.div`
   align-items: center;
   justify-content: center;
 
-  font-size: ${({ longText }) => (longText ? "1.85rem" : "2.5rem")};
+  font-size: 2rem;
 
-  height: 150px;
   overflow: hidden;
-  padding: 1.25rem;
+  padding: 1.5rem 6rem;
+
+  width: 100%;
 
   .background-number {
     color: black;
@@ -27,7 +29,6 @@ const LinkCardStyles = styled.div`
   }
 
   p {
-    width: 200px;
     text-align: center;
     font-weight: 500;
   }
@@ -43,7 +44,7 @@ const LinkCardStyles = styled.div`
 
 const LinkCard = ({ number, link, title, longText }) => {
   return (
-    <LinkCardStyles longText={longText}>
+    <LinkCardStyles longText={longText} onClick={() => navigate(`/#${link}`)}>
       <span className="background-number">{number}</span>
       <p>{title}</p>
     </LinkCardStyles>
@@ -52,21 +53,21 @@ const LinkCard = ({ number, link, title, longText }) => {
 
 const LinkGridStyles = styled.div`
   display: grid;
-  grid-template-columns: 300px 300px 300px;
-  justify-content: center;
-  gap: 100px;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 1rem;
 `;
 
 const LinkGrid = () => {
   return (
     <LinkGridStyles>
-      <LinkCard number={1} title="Increase Value" />
+      <LinkCard number={1} title="Increase Value" link="increase-value" />
       <LinkCard
         number={2}
         title="Improve Speed and Certainty to Close"
         longText={true}
+        link="improve-speed"
       />
-      <LinkCard number={3} title="Defend Founders" />
+      <LinkCard number={3} title="Defend Founders" link="defend-founders" />
     </LinkGridStyles>
   );
 };

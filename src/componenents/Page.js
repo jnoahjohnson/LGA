@@ -20,6 +20,10 @@ const GlobalStyle = createGlobalStyle`
         font-family: 'montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     a {
         color: inherit;
         text-decoration: none;
@@ -37,15 +41,21 @@ const GlobalStyle = createGlobalStyle`
       width: 100%;
     }
 
+    h1, h2, h3 {
+      padding: 0;
+      margin: 0;
+    }
+    
+
     
 `;
 
-const Page = ({ children }) => (
+const Page = ({ children, fullNav, footer }) => (
   <>
     <GlobalStyle />
-    <NavBar />
+    <NavBar fullNav={fullNav} />
     {children}
-    <Footer />
+    {footer && <Footer />}
   </>
 );
 

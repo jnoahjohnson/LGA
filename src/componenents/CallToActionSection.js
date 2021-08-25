@@ -26,7 +26,8 @@ const ContentStyles = styled.div`
 `;
 
 const SectionStyles = styled.div`
-  background: var(--light);
+  background: var(--darkBackground);
+  color: white;
   padding: 6rem 1rem;
 `;
 

@@ -2,16 +2,36 @@ import React from "react";
 import styled from "styled-components";
 
 const ClassicSectionStyles = styled.div`
-  background: ${({ dark }) =>
-    dark ? "var(--darkBackground, black)" : "var(--light, white)"};
+  background: ${({ dark, blue }) =>
+    dark
+      ? "var(--darkBackground)"
+      : blue
+      ? "var(--primary)"
+      : "var(--light, white)"};
 
-  color: ${({ dark }) => (dark ? "white" : "black")};
+  color: ${({ dark, blue }) => (dark || blue ? "white" : "black")};
+
+  padding: 1.5rem 0;
 
   h1 {
-    font-size: 3rem;
-    padding: var(--contentPadding) var(--contentPadding) 0.7rem
-      var(--contentPadding);
+    font-size: 3.5rem;
+    padding-bottom: 0.5rem;
     font-weight: 800;
+    margin: 0;
+    text-transform: uppercase;
+  }
+  .title {
+    padding: var(--contentPadding);
+    padding-bottom: 0;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+    max-width: 1200px;
+    padding: var(--contentPadding);
+    padding-top: 0;
+    font-weight: 400;
+    margin: 0;
   }
 `;
 
@@ -24,9 +44,6 @@ const Bar = styled.div`
 
 const ContentStyles = styled.div`
   padding: var(--contentPadding);
-
-  p {
-  }
 
   .description {
     font-size: 1.3rem;
@@ -42,12 +59,13 @@ const ClassicSectionContent = styled.div`
   margin: 0 auto;
 `;
 
-const ClassicSection = ({ dark = false, title, children }) => {
+const ClassicSection = ({ dark, blue, title, children, description }) => {
   return (
-    <ClassicSectionStyles dark={dark}>
+    <ClassicSectionStyles dark={dark} blue={blue}>
       <ClassicSectionContent>
-        <h1>{title}</h1>
-        <Bar />
+        {title && <h1 className="title">{title}</h1>}
+        {description && <h2>{description}</h2>}
+        {/* <Bar /> */}
         <ContentStyles>{children}</ContentStyles>
       </ClassicSectionContent>
     </ClassicSectionStyles>
