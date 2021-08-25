@@ -4,7 +4,6 @@ import styled from "styled-components";
 import SplitSection from "./SplitSection";
 
 const FullPageSectionStyles = styled.div`
-  height: calc(100vh - 110px);
   display: flex;
   flex-direction: column;
 

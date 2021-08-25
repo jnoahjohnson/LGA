@@ -1,6 +1,6 @@
 import { StaticImage } from "gatsby-plugin-image";
 import React, { useEffect, useState } from "react";
-import { Link } from "gatsby";
+import { Link, navigate } from "gatsby";
 import styled from "styled-components";
 import { Button, Spacer } from "./Utility";
 import LGALogo from "../images/LGALogo.png";
@@ -109,7 +109,7 @@ const NavBar = ({ fullNav }) => {
           <Link to="/hiring">Hiring</Link>
         </li>
         <Spacer width={20} />
-        <Button>Get in Touch</Button>
+        <Button onClick={() => navigate("/contact")}>Get in Touch</Button>
       </ul>
     </NavBarStyles>
   );
