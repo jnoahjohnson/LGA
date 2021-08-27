@@ -51,6 +51,9 @@ const ContactInfoSection = styled.div``;
 
 export default function ContactSection() {
   const { register, handleSubmit } = useForm();
+
+  const [didSubmit, setDidSubmit] = useForm(false);
+
   const onSubmit = (data) => {
     fetch(`/api/form`, {
       method: `POST`,
@@ -62,6 +65,7 @@ export default function ContactSection() {
       .then((res) => res.json())
       .then((body) => {
         console.log(`response from API:`, body);
+        setDidSubmit(true);
       });
   };
 
@@ -82,27 +86,31 @@ export default function ContactSection() {
         </h2>
       </ContactInfoSection>
       <ContactFormSection>
-        <form
-          onSubmit={onSubmit}
-          method="POST"
-          style={{ display: `block`, width: 400 }}
-        >
-          <label htmlFor="name">Name</label>
-          <input
-            id="name"
-            type="text"
-            style={{ display: `block`, marginBottom: 16 }}
-            name="name"
-          />
+        {didSubmit ? (
+          <div>Thank you!</div>
+        ) : (
+          <form
+            // onSubmit={handleSubmit(onSubmit)}
+            action="/api/form"
+            method="POST"
+            style={{ display: `block`, width: 400 }}
+          >
+            <label htmlFor="name">Name</label>
+            <input
+              id="name"
+              type="text"
+              style={{ display: `block`, marginBottom: 16 }}
+              name="name"
+            />
 
-          <label htmlFor="email">Email</label>
-          <input
-            id="email"
-            type="text"
-            name="email"
-            style={{ display: `block`, marginBottom: 16 }}
-          />
-          {/* 
+            <label htmlFor="email">Email</label>
+            <input
+              id="email"
+              type="text"
+              name="email"
+              style={{ display: `block`, marginBottom: 16 }}
+            />
+            {/* 
           <label htmlFor="tel">Mobile number</label>
           <input
             id="tel"
@@ -115,16 +123,17 @@ export default function ContactSection() {
             })}
           /> */}
 
-          <label htmlFor="message">Message</label>
-          <input
-            id="message"
-            type="text"
-            style={{ display: `block`, marginBottom: 16 }}
-            name="message"
-          />
+            <label htmlFor="message">Message</label>
+            <input
+              id="message"
+              type="text"
+              style={{ display: `block`, marginBottom: 16 }}
+              name="message"
+            />
 
-          <input type="submit" value="Submit" />
-        </form>
+            <input type="submit" value="Submit" />
+          </form>
+        )}
       </ContactFormSection>
       <img
         src={`https://maps.googleapis.com/maps/api/staticmap?center=${coordinates}&zoom=10&size=600x500&key=${key}&map_id=${mapId}`}
