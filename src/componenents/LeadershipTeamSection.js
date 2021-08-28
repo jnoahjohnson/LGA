@@ -1,8 +1,7 @@
-import { StaticImage } from "gatsby-plugin-image";
 import React from "react";
 import styled from "styled-components";
-import SplitSection from "./SplitSection";
-import { TeamMembers } from "../data/TeamMembers";
+
+import { graphql, useStaticQuery } from "gatsby";
 
 const LeadershipStyles = styled.div`
   background: var(--darkBackground);
@@ -57,39 +56,59 @@ const LeadershipItemStyles = styled.div`
 const LeadershipItem = ({ member }) => {
   return (
     <LeadershipItemStyles style={{ maxWidth: 950, margin: "0 auto 20px auto" }}>
-      <img src={member.image} alt="Building" />
+      <img src={member.Image} alt={`Photo of ${member.Name}`} />
       <LeadershipInformation>
         <div style={{ marginBottom: 10 }}>
-          <h1 className="name">{member.name}</h1>
-          <h2 className="title">{member.title}</h2>
+          <h1 className="name">{member.Name}</h1>
+          <h2 className="title">{member.Title}</h2>
         </div>
         <div style={{ marginBottom: 10 }}>
-          <h2>Key Experience</h2>
+          <h2>Perspective</h2>
           <ul>
-            {member.experience.map((experience) => (
-              <li>{experience}</li>
+            {member.Perspective.split(";").map((perspective) => (
+              <li>{perspective}</li>
             ))}
           </ul>
         </div>
-        <div>
-          <h2>Education</h2>
-          <ul>
-            {member.education.map((education) => (
-              <li>{education}</li>
-            ))}
-          </ul>
-        </div>
+        {member.Personal && (
+          <div>
+            <h2>Personal</h2>
+            <p>{member.Personal}</p>
+          </div>
+        )}
       </LeadershipInformation>
     </LeadershipItemStyles>
   );
 };
 
 export default function LeadershipTeamSection() {
+  const data = useStaticQuery(graphql`
+    query LeadershipQuery {
+      allAirtable(
+        filter: {
+          table: { eq: "Team" }
+          data: { Division: { eq: "Leadership" } }
+        }
+        sort: { fields: rowIndex, order: DESC }
+      ) {
+        nodes {
+          table
+          data {
+            Name
+            Personal
+            Perspective
+            Title
+            Image
+          }
+        }
+      }
+    }
+  `);
   return (
     <LeadershipStyles>
       <h1 className="header">Leadership</h1>
-      {TeamMembers.leadership.map((member) => (
-        <LeadershipItem member={member} />
+      {data.allAirtable.nodes.map(({ data }) => (
+        <LeadershipItem member={data} />
       ))}
     </LeadershipStyles>
   );

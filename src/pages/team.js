@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import CallToActionSection from "../componenents/CallToActionSection";
 import FullTeam from "../componenents/FullTeam";
 import LeadershipTeamSection from "../componenents/LeadershipTeamSection";
 import Page from "../componenents/Page";
@@ -42,6 +43,7 @@ export default function TeamPage() {
         </InfoSection>
         <LeadershipTeamSection />
         <FullTeam />
+        <CallToActionSection />
       </main>
     </Page>
   );

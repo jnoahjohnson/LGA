@@ -2952,7 +2952,7 @@
     "inherits" "^2.0.4"
     "readable-stream" "^3.4.0"
 
-"bluebird@^3.7.2":
+"bluebird@^3.5.4", "bluebird@^3.7.2":
   "integrity" "sha512-XpNj6GDQzdfW+r2Wnn7xiSAd7TM3jzkxGXBGTtWKuSXv1xUV+azxAm8jdWZN06QTQk+2N2XB9jRDkvbmQmcRtg=="
   "resolved" "https://registry.npmjs.org/bluebird/-/bluebird-3.7.2.tgz"
   "version" "3.7.2"
@@ -4628,7 +4628,7 @@
   dependencies:
     "is-obj" "^2.0.0"
 
-"dotenv@^8.2.0":
+"dotenv@^8.2.0", "dotenv@^8.6.0":
   "integrity" "sha512-IrPdXQsk2BbzvCBGBOTmmSH5SodmqZNt4ERAZDmW4CT+tL8VtvinqywuANaFu4bOMWki16nqf0e4oC0QIaDr/g=="
   "resolved" "https://registry.npmjs.org/dotenv/-/dotenv-8.6.0.tgz"
   "version" "8.6.0"
@@ -5818,6 +5818,11 @@
   "resolved" "https://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz"
   "version" "1.0.0"
 
+"fs@^0.0.1-security":
+  "integrity" "sha1-invTcYa23d84E/I4WLV+yq9eQdQ="
+  "resolved" "https://registry.npmjs.org/fs/-/fs-0.0.1-security.tgz"
+  "version" "0.0.1-security"
+
 "fsevents@^1.2.7":
   "integrity" "sha512-oWb1Z6mkHIskLzEJ/XWX0srkpkTQ7vaopMQkyaEIoq0fmtFVxOthb8cCxeT+p3ynTdkk/RZwbgG4brR5BeWECw=="
   "resolved" "https://registry.npmjs.org/fsevents/-/fsevents-1.2.13.tgz"
@@ -5940,6 +5945,11 @@
     "glob" "^7.1.6"
     "lodash" "^4.17.21"
     "micromatch" "^4.0.2"
+
+"gatsby-plugin-config@^1.0.7":
+  "integrity" "sha512-js7zLJcTD+G5ea4rPYHztb+N+KqGo6ax5rGviuTUDdKu0N1oGWp8FuozQrdx7TPKjMv/g5pvMAGrhk5TcPd5tQ=="
+  "resolved" "https://registry.npmjs.org/gatsby-plugin-config/-/gatsby-plugin-config-1.0.7.tgz"
+  "version" "1.0.7"
 
 "gatsby-plugin-gatsby-cloud@^2.11.0":
   "integrity" "sha512-MsMlhBQdQi5hn3AezSTob3VksWA/cFcSjxafZIY8nd85pXDXOCdOhReuG/6c8KkUS/fcNLtlwwGpjXaz3iFAoQ=="
@@ -6143,7 +6153,16 @@
     "xstate" "^4.9.1"
     "yoga-layout-prebuilt" "^1.9.6"
 
-"gatsby-source-filesystem@^3.0.0-next.0", "gatsby-source-filesystem@^3.11.0":
+"gatsby-source-airtable@^2.2.1":
+  "integrity" "sha512-g2r4cN3aqJAuxW3wxhwKvzUutELPZHjVfiOok87987lyl4NGwXMlxvk76fGpCzRmA8rClBss0J5v9xk7lQMJZg=="
+  "resolved" "https://registry.npmjs.org/gatsby-source-airtable/-/gatsby-source-airtable-2.2.1.tgz"
+  "version" "2.2.1"
+  dependencies:
+    "airtable" "^0.11.1"
+    "bluebird" "^3.5.4"
+    "mime" "^2.4.4"
+
+"gatsby-source-filesystem@^3.0.0-next.0", "gatsby-source-filesystem@^3.11.0", "gatsby-source-filesystem@>=2.0.0-rc.0":
   "integrity" "sha512-cKQ4yhzLfw8Gs0B1FtgsLu51iqF+BUu/UewLBtu61I7Qyym797ESqeAvBd0bdHYckXmWl7c3qhBd1531iOXp2w=="
   "resolved" "https://registry.npmjs.org/gatsby-source-filesystem/-/gatsby-source-filesystem-3.11.0.tgz"
   "version" "3.11.0"
@@ -9797,6 +9816,14 @@
   "resolved" "https://registry.npmjs.org/path-type/-/path-type-4.0.0.tgz"
   "version" "4.0.0"
 
+"path@^0.12.7":
+  "integrity" "sha1-1NwqUGxM4hl+tIHr/NWzbAFAsQ8="
+  "resolved" "https://registry.npmjs.org/path/-/path-0.12.7.tgz"
+  "version" "0.12.7"
+  dependencies:
+    "process" "^0.11.1"
+    "util" "^0.10.3"
+
 "peek-readable@^4.0.1":
   "integrity" "sha512-7qmhptnR0WMSpxT5rMHG9bW/mYSR1uqaPFj2MHvT+y/aOUu6msJijpKt5SkTDKySwg65OWG2JwTMBlgcbwMHrQ=="
   "resolved" "https://registry.npmjs.org/peek-readable/-/peek-readable-4.0.1.tgz"
@@ -10304,7 +10331,7 @@
   "resolved" "https://registry.npmjs.org/process-nextick-args/-/process-nextick-args-2.0.1.tgz"
   "version" "2.0.1"
 
-"process@^0.11.10":
+"process@^0.11.1", "process@^0.11.10":
   "integrity" "sha1-czIwDoQBYb2j5podHZGn1LwW8YI="
   "resolved" "https://registry.npmjs.org/process/-/process-0.11.10.tgz"
   "version" "0.11.10"
@@ -12993,6 +13020,13 @@
     "es-abstract" "^1.17.2"
     "has-symbols" "^1.0.1"
     "object.getownpropertydescriptors" "^2.1.0"
+
+"util@^0.10.3":
+  "integrity" "sha512-0Pm9hTQ3se5ll1XihRic3FDIku70C+iHUdT/W926rSgHV5QgXsYbKZN8MSC3tJtSkhuROzvsQjAaFENRXr+19A=="
+  "resolved" "https://registry.npmjs.org/util/-/util-0.10.4.tgz"
+  "version" "0.10.4"
+  dependencies:
+    "inherits" "2.0.3"
 
 "utila@~0.4":
   "integrity" "sha1-ihagXURWV6Oupe7MWxKk+lN5dyw="

@@ -3,6 +3,7 @@ import { StaticImage } from "gatsby-plugin-image";
 import React from "react";
 import styled from "styled-components";
 import { Button, Spacer } from "./Utility";
+import PersonCard from "./PersonCard";
 
 const LeadershipGridSectionStyles = styled.div`
   background: var(--light);
@@ -15,44 +16,12 @@ const LeadershipGridSectionStyles = styled.div`
 const GridSection = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 3rem;
-`;
+  gap: 1rem;
 
-const PersonCardStyles = styled.div`
-  background: var(--primary);
-  box-shadow: var(--defaultShadow);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-
-  padding: 0.9rem;
-
-  .name {
-    padding: 0;
-    font-weight: bold;
-    font-size: 2rem;
-    margin-top: 0.8rem;
-    color: white;
-  }
-
-  .title {
-    font-size: 1.5rem;
-    color: var(--accent);
-    padding: 0;
-  }
-
-  img {
-    height: 400px;
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
   }
 `;
-
-const PersonCard = ({ name, title, image }) => (
-  <PersonCardStyles>
-    {image}
-    <h1 className="name">{name}</h1>
-    <h2 className="title">{title}</h2>
-  </PersonCardStyles>
-);
 
 const BobPortrait = () => (
   <StaticImage src="../images/BobPortrait.png" alt="Bob Winder" />

@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`, // or '.env'
+});
+
 module.exports = {
   siteMetadata: {
     siteUrl: "https://www.yourdomain.tld",
@@ -39,6 +43,23 @@ module.exports = {
           `montserrat\:900`,
         ],
         display: "swap",
+      },
+    },
+    {
+      resolve: `gatsby-source-airtable`,
+      options: {
+        apiKey: process.env.AIRTABLE_KEY, // may instead specify via env, see below
+        concurrency: 5, // default, see using markdown and attachments for more information
+        tables: [
+          {
+            baseId: process.env.AIRTABLE_DB,
+            tableName: `Results`,
+          },
+          {
+            baseId: process.env.AIRTABLE_DB,
+            tableName: `Team`,
+          },
+        ],
       },
     },
   ],

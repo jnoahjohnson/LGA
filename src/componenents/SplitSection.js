@@ -17,6 +17,10 @@ const SplitSectionStyles = styled.div`
     top: -110px;
     visibility: hidden;
   }
+
+  @media (max-width: 950px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const ContentStyles = styled.div`
@@ -33,6 +37,10 @@ const ContentStyles = styled.div`
     font-size: 3rem;
     text-transform: uppercase;
   }
+
+  @media (max-width: 950px) {
+    grid-column-start: 1;
+  }
 `;
 
 const ImageStyles = styled.div`
@@ -48,6 +56,10 @@ const ImageStyles = styled.div`
 
   .gatsby-image-wrapper {
     height: 100%;
+  }
+
+  @media (max-width: 950px) {
+    grid-column-start: 1;
   }
 `;
 

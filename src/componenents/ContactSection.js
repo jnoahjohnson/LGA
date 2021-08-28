@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { useForm } from "react-hook-form";
 
@@ -52,7 +52,7 @@ const ContactInfoSection = styled.div``;
 export default function ContactSection() {
   const { register, handleSubmit } = useForm();
 
-  const [didSubmit, setDidSubmit] = useForm(false);
+  const [didSubmit, setDidSubmit] = useState(false);
 
   const onSubmit = (data) => {
     fetch(`/api/form`, {
@@ -90,8 +90,8 @@ export default function ContactSection() {
           <div>Thank you!</div>
         ) : (
           <form
-            // onSubmit={handleSubmit(onSubmit)}
-            action="/api/form"
+            onSubmit={handleSubmit(onSubmit)}
+            // action="/api/form"
             method="POST"
             style={{ display: `block`, width: 400 }}
           >
@@ -101,14 +101,16 @@ export default function ContactSection() {
               type="text"
               style={{ display: `block`, marginBottom: 16 }}
               name="name"
+              {...register("name", { required: true, maxLength: 80 })}
             />
 
             <label htmlFor="email">Email</label>
             <input
               id="email"
-              type="text"
+              type="email"
               name="email"
               style={{ display: `block`, marginBottom: 16 }}
+              {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
             />
             {/* 
           <label htmlFor="tel">Mobile number</label>
@@ -129,6 +131,7 @@ export default function ContactSection() {
               type="text"
               style={{ display: `block`, marginBottom: 16 }}
               name="message"
+              {...register("message", { required: true, maxLength: 250 })}
             />
 
             <input type="submit" value="Submit" />
