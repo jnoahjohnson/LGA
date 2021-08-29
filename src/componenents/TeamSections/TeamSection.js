@@ -9,6 +9,8 @@ const PersonGrid = styled.div`
 
   padding: 2rem var(--contentPadding);
 
+  /* grid-auto-rows: 350px; */
+
   @media (max-width: 1055px) {
     padding: 2rem 0;
   }

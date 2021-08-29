@@ -21,15 +21,20 @@ const SmallPersonCardStyles = styled.div`
     color: var(--accent);
     padding: 0;
   }
+`;
 
-  img {
-    max-height: 350px;
-  }
+const PersonImage = styled.div`
+  height: 300px;
+  background: url(${(props) => props.backgroundImage});
+  width: 100%;
+  background-size: cover;
+  background-repeat: none;
+  background-position: top;
 `;
 
 const SmallPersonCard = ({ name, title, image, imageSource }) => (
   <SmallPersonCardStyles>
-    {image ? image : <img src={imageSource} alt={name} />}
+    {image ? image : <PersonImage backgroundImage={imageSource}></PersonImage>}
     <h1 className="name">{name}</h1>
     <h2 className="title">{title}</h2>
   </SmallPersonCardStyles>
