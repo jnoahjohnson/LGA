@@ -28,7 +28,6 @@ const ContentStyles = styled.div`
 
   padding: 2rem;
 
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
