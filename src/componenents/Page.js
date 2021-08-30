@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { createGlobalStyle } from "styled-components";
 import Footer from "./Footer";
 import NavBar from "./NavBar";
+import SideBarNav from "./SideBarNav";
 
 const GlobalStyle = createGlobalStyle`
     * {
@@ -32,6 +33,7 @@ const GlobalStyle = createGlobalStyle`
     main {
       position: relative;
       z-index: 1;
+      /* overflow-x: hidden; */
     }
 
     footer {
@@ -50,13 +52,22 @@ const GlobalStyle = createGlobalStyle`
     
 `;
 
-const Page = ({ children, fullNav, footer }) => (
-  <>
-    <GlobalStyle />
-    <NavBar fullNav={fullNav} />
-    {children}
-    {footer && <Footer />}
-  </>
-);
+const Page = ({ children, fullNav, footer }) => {
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
 
+  return (
+    <>
+      <GlobalStyle />
+      <NavBar
+        fullNav={fullNav}
+        setMenuIsOpen={() => {
+          setMenuIsOpen(true);
+        }}
+      />
+      <SideBarNav isOpen={menuIsOpen} setIsOpen={() => setMenuIsOpen(false)} />
+      {children}
+      {footer && <Footer />}
+    </>
+  );
+};
 export default Page;

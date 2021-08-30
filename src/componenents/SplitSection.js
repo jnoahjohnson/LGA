@@ -49,6 +49,8 @@ const ImageStyles = styled.div`
   align-items: center;
   justify-content: center;
 
+  width: 100%;
+
   img {
     width: 100%;
   }
@@ -59,6 +61,7 @@ const ImageStyles = styled.div`
 
   @media (max-width: 950px) {
     grid-column-start: 1;
+    max-width: 100%;
   }
 `;
 

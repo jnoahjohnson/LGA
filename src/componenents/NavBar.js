@@ -4,6 +4,8 @@ import { Link, navigate } from "gatsby";
 import styled from "styled-components";
 import { Button, Spacer } from "./Utility";
 import LGALogo from "../images/LGALogo.png";
+import { Menu } from "react-feather";
+import SideBarNav from "./SideBarNav";
 
 const NavBarStyles = styled.nav`
   width: ${({ isScrolled }) => (isScrolled ? "100%" : "90%")};
@@ -67,9 +69,23 @@ const NavBarStyles = styled.nav`
   .active-link::after {
     transform: translate3d(0, 0, 0);
   }
+
+  .open-menu {
+    display: none;
+  }
+
+  @media (max-width: 940px) {
+    .links {
+      display: none;
+    }
+
+    .open-menu {
+      display: block;
+    }
+  }
 `;
 
-const NavBar = ({ fullNav }) => {
+const NavBar = ({ fullNav, setMenuIsOpen }) => {
   const [isScrolled, setIsScrolled] = useState(fullNav ? true : false);
 
   useEffect(() => {
@@ -90,7 +106,12 @@ const NavBar = ({ fullNav }) => {
   return (
     <NavBarStyles isScrolled={isScrolled}>
       <img src={LGALogo} alt="Logan Growth Advisors" />
-      <ul>
+
+      <div onClick={() => setMenuIsOpen()}>
+        <Menu className="open-menu" size={32} />
+      </div>
+
+      <ul className="links">
         <li>
           <Link to="/" activeClassName="active-link">
             Home
@@ -117,7 +138,7 @@ const NavBar = ({ fullNav }) => {
           </Link>
         </li>
         <Spacer width={20} />
-        <Button onClick={() => navigate("/contact")}>Get in Touch</Button>
+        <Button onClick={() => navigate("/contact")}>Connect</Button>
       </ul>
     </NavBarStyles>
   );

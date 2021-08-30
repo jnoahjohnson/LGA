@@ -50,7 +50,7 @@ const LinkContainer = styled.div`
 const RightSide = styled.div`
   display: flex;
   flex-direction: column;
-
+  margin-top: 1rem;
   a {
     text-align: right;
     margin-bottom: 0.5rem;
@@ -68,11 +68,7 @@ const Footer = () => (
   <FooterStyles>
     <FooterContentStyles>
       <LeftSide>
-        <StaticImage
-          src="../images/LGALogo.png"
-          alt="Logan Growth Advisors"
-          width={200}
-        />
+        <StaticImage src="../images/LGALogo.png" alt="Logan Growth Advisors" />
         <LinkContainer>
           <Link to="/">Privacy Policy</Link>
           <Link to="/">Terms of Use</Link>
@@ -81,10 +77,11 @@ const Footer = () => (
         <p>&copy; 2021, All Rights Reserved</p>
       </LeftSide>
       <RightSide>
-        <Link to="/">Services</Link>
-        <Link to="/">Team</Link>
-        <Link to="/">Experience</Link>
-        <Link to="/">Get in Touch</Link>
+        <Link to="/">Home</Link>
+        <Link to="/services">Services</Link>
+        <Link to="/team">Team</Link>
+        <Link to="/results">Results</Link>
+        <Link to="/hiring">Hiring</Link>
       </RightSide>
     </FooterContentStyles>
   </FooterStyles>

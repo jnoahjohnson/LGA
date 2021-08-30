@@ -10,7 +10,7 @@ export default function ResultsPage() {
       <main style={{ background: "var(--light)" }}>
         <PhotoHeader
           firstWord="Our"
-          title="Past Transactions"
+          title="Recent Transactions"
           backgroundImage="https://res.cloudinary.com/dbolbbqw7/image/upload/f_auto/PastTransactions_ogfb5c.png"
         />
         <ResultsGrid />

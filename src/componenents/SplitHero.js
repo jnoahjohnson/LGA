@@ -39,6 +39,10 @@ const ContentStyles = styled.div`
     text-transform: uppercase;
     font-size: 3.5rem;
   }
+
+  @media (max-width: 500px) {
+    padding: 0;
+  }
 `;
 
 const ImageStyles = styled.div`
@@ -59,6 +63,11 @@ const InnerStyles = styled.div`
 
   max-width: 1800px;
   margin: 0 auto;
+
+  @media (max-width: 500px) {
+    grid-template-columns: 1fr;
+    padding: 0;
+  }
 `;
 
 const SplitHero = ({ children }) => {

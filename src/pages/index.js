@@ -52,12 +52,16 @@ const IndexPage = () => {
         <SplitHero>
           <ContnetContainer>
             <Fade delay={100}>
-              <h2>We Help Businesses Win</h2>
+              <h2>We Help Founders Win</h2>
               <p>
-                We have been on all sides of deals including buying companies as
-                PE investors, running companies as CEO and CFOs, and selling
-                companies.
+                We help founders win in raising capital or selling their
+                business. Partner with us to improve (1) valuation and terms,
+                (2) speed and certainty to close, and (3) defend founders
+                against predatory clawbacks.
               </p>
+              {/* <ol>
+                <li>aluation and terms</li>
+              </ol> */}
             </Fade>
             <Spacer height={15} />
             <Fade delay={150} duration={800}>
@@ -66,6 +70,7 @@ const IndexPage = () => {
           </ContnetContainer>
         </SplitHero>
         <ClassicSection blue>
+          <h1 style={{ textAlign: "center" }}>WHY LOGAN IS THE BEST</h1>
           <IconGrid data={WhyLoganData} />
         </ClassicSection>
         <SplitSection
@@ -77,7 +82,7 @@ const IndexPage = () => {
             />
           }
         >
-          <h1>Logan will help your business</h1>
+          <h1>HOW LOGAN HELPS YOU WIN</h1>
           <Spacer height={20} />
           <LinkGrid />
           <Spacer height={30} />

@@ -85,7 +85,10 @@ const ResultsGridStyles = styled.div`
 export default function ResultsGrid() {
   const data = useStaticQuery(graphql`
     query ResultQuery {
-      allAirtable(filter: { table: { eq: "Results" } }) {
+      allAirtable(
+        filter: { table: { eq: "Results" } }
+        sort: { fields: data___Year, order: DESC }
+      ) {
         edges {
           node {
             id
