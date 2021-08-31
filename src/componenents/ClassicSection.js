@@ -33,6 +33,10 @@ const ClassicSectionStyles = styled.div`
     font-weight: 400;
     margin: 0;
   }
+
+  @media (max-width: 450px) {
+    padding: 0.5rem;
+  }
 `;
 
 const Bar = styled.div`
@@ -44,6 +48,10 @@ const Bar = styled.div`
 
 const ContentStyles = styled.div`
   padding: var(--contentPadding);
+
+  @media (max-width: 450px) {
+    padding: 0.5rem;
+  }
 
   .description {
     font-size: 1.3rem;
@@ -57,6 +65,13 @@ const ContentStyles = styled.div`
 const ClassicSectionContent = styled.div`
   max-width: 1400px;
   margin: 0 auto;
+
+  @media (max-width: 450px) {
+    .title {
+      padding: 0.5rem;
+      text-align: center;
+    }
+  }
 `;
 
 const ClassicSection = ({ dark, blue, title, children, description }) => {

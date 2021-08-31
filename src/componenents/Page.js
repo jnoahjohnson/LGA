@@ -23,8 +23,15 @@ const GlobalStyle = createGlobalStyle`
 
     html {
       scroll-behavior: smooth;
+      overflow-x: hidden;
+      
     }
-
+    @media (max-width: 450px) {
+      html {
+        font-size: 12px;
+      }
+    }
+    
     a {
         color: inherit;
         text-decoration: none;

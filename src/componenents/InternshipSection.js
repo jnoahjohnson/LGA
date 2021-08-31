@@ -63,8 +63,8 @@ export default function InternshipSection() {
         contentLeft
         backgroundImage={
           <StaticImage
-            src="https://res.cloudinary.com/dbolbbqw7/image/upload/v1629303384/HeroBackground_yw4tot.png"
-            alt="Building"
+            src="https://res.cloudinary.com/dbolbbqw7/image/upload/f_auto/v1630384132/LGAAssets/maranda-vandergriff-7aakZdIl4vg-unsplash_a7jwfm.jpg"
+            alt="Desk with computer"
           />
         }
       >

@@ -67,8 +67,8 @@ const ValueAddSection = () => (
       smallImage
       backgroundImage={
         <StaticImage
-          src="https://res.cloudinary.com/dbolbbqw7/image/upload/f_auto/HeroBackground_yw4tot.png"
-          alt="Building"
+          src="https://res.cloudinary.com/dbolbbqw7/image/upload/f_auto/v1630383190/LGAAssets/alexander-mils-lCPhGxs7pww-unsplash_hjcef9.jpg"
+          alt="Money in hand"
         />
       }
       dark
@@ -87,8 +87,8 @@ const ValueAddSection = () => (
       smallImage
       backgroundImage={
         <StaticImage
-          src="https://res.cloudinary.com/dbolbbqw7/image/upload/f_auto/HeroBackground_yw4tot.png"
-          alt="Building"
+          src="https://res.cloudinary.com/dbolbbqw7/image/upload/f_auto/v1630383183/LGAAssets/jake-givens-iR8m2RRo-z4-unsplash_vpaibi.jpg"
+          alt="Lights on roads"
         />
       }
       contentLeft
@@ -107,8 +107,8 @@ const ValueAddSection = () => (
       smallImage
       backgroundImage={
         <StaticImage
-          src="https://res.cloudinary.com/dbolbbqw7/image/upload/f_auto/HeroBackground_yw4tot.png"
-          alt="Building"
+          src="https://res.cloudinary.com/dbolbbqw7/image/upload/f_auto/v1630384043/LGAAssets/razvan-chisu-Ua-agENjmI4-unsplash_jd2gzu.jpg"
+          alt="Looking up at building"
         />
       }
       dark

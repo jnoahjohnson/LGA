@@ -77,8 +77,8 @@ const IndexPage = () => {
           contentLeft
           backgroundImage={
             <StaticImage
-              src="https://res.cloudinary.com/dbolbbqw7/image/upload/f_auto/HeroBackground_yw4tot.png"
-              alt="Building"
+              src="https://res.cloudinary.com/dbolbbqw7/image/upload/f_auto/v1630383186/LGAAssets/hide-obara-2p1HOcpi14U-unsplash_pi7nl0.jpg"
+              alt="Buildings"
             />
           }
         >

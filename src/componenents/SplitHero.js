@@ -41,7 +41,7 @@ const ContentStyles = styled.div`
   }
 
   @media (max-width: 500px) {
-    padding: 0;
+    padding: 1.5rem;
   }
 `;
 

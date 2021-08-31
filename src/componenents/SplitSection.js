@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Fade from "react-reveal/fade";
 
 const SplitSectionStyles = styled.div`
   background: ${({ dark }) =>
@@ -81,6 +82,7 @@ export default function SplitSection({
     >
       <div className="anchor" id={id} />
       <ContentStyles gridColumn={contentLeft ? 1 : 2}>{children}</ContentStyles>
+
       <ImageStyles gridColumn={contentLeft ? 2 : 1}>
         {backgroundImage}
       </ImageStyles>

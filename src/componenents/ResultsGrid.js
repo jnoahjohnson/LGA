@@ -7,7 +7,7 @@ const ResultCardStyles = styled.div`
   background: #e6e6e6;
   text-align: center;
   position: relative;
-  border: 4px solid var(--primary);
+  border: 6px solid var(--primary);
   box-shadow: var(--defaultShadow);
   img {
     width: 200px;
