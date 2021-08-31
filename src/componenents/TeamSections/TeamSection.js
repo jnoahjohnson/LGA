@@ -29,6 +29,11 @@ const PersonGrid = styled.div`
 `;
 
 export default function TeamSection({ sectionTitle, teamMembers }) {
+  const greyImage = (imageUrl) => {
+    var imageUrlArray = imageUrl.split("upload");
+    imageUrlArray.splice(1, 0, "upload/e_grayscale");
+    return imageUrlArray.join("");
+  };
   return (
     <div style={{ maxWidth: 1350, margin: "0 auto" }}>
       <h1>{sectionTitle}</h1>
@@ -37,7 +42,7 @@ export default function TeamSection({ sectionTitle, teamMembers }) {
           <SmallPersonCard
             name={data.Name}
             title={data.Title}
-            imageSource={data.Image}
+            imageSource={greyImage(data.Image)}
           />
         ))}
       </PersonGrid>

@@ -1,21 +1,12 @@
 import { graphql, useStaticQuery } from "gatsby";
 import React from "react";
 import styled from "styled-components";
+import DynamicImage from "./DynamicImage";
 
 const ResultCardStyles = styled.div`
   background: #d6d6d6;
   text-align: center;
   position: relative;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-
-  height: 385px;
-  padding-top: 0.75rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
 
   img {
     width: 200px;
@@ -30,6 +21,16 @@ const YearSection = styled.h1`
 
   padding: 0.5rem 2rem;
   box-shadow: var(--defaultShadow);
+  width: 100%;
+`;
+
+const ResultContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 375px;
+  padding: 0.75rem 1.25rem;
 `;
 
 const ResultCard = ({
@@ -41,18 +42,22 @@ const ResultCard = ({
 }) => {
   return (
     <ResultCardStyles>
-      {investorImage ? (
-        <img src={investorImage} alt={investorName} />
-      ) : (
-        <h1>{investorName}</h1>
-      )}
-      <h2>Invested In</h2>
-      {investedImage ? (
-        <img src={investedImage} alt={investedName} />
-      ) : (
-        <h1>{investedName}</h1>
-      )}
       <YearSection>{year}</YearSection>
+      <ResultContent>
+        {investorImage ? (
+          <DynamicImage image={investorImage} />
+        ) : (
+          <h1>{investorName}</h1>
+        )}
+        <h2 style={{ padding: "30px 0" }}>Invested In</h2>
+        {investedImage ? (
+          <DynamicImage image={investedImage} />
+        ) : (
+          <h1 style={{ height: 150, display: "flex", alignItems: "center" }}>
+            {investedName}
+          </h1>
+        )}
+      </ResultContent>
     </ResultCardStyles>
   );
 };
