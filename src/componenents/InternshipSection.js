@@ -1,8 +1,11 @@
 import { StaticImage } from "gatsby-plugin-image";
 import React from "react";
 import styled from "styled-components";
+import CallToActionSection from "./CallToActionSection";
+import QuoteCard from "./QuoteCard";
 import SplitSection from "./SplitSection";
 import { Button, Spacer } from "./Utility";
+import { InternshipQuotes } from "../data/InternshipQuotes";
 
 const InternshipStyles = styled.div`
   display: flex;
@@ -41,6 +44,17 @@ const InternshipStyles = styled.div`
   }
 `;
 
+const QuoteGrid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: ". a a" "b b ." ". c c" "d d .";
+  gap: 2rem;
+
+  @media (max-width: 900px) {
+    grid-template-areas: "a a a" "b b b" "c c c" "d d d";
+  }
+`;
+
 export default function InternshipSection() {
   return (
     <InternshipStyles>
@@ -70,9 +84,18 @@ export default function InternshipSection() {
       </SplitSection>
       <Spacer height={20} />
       <button>Join the Team. Apply Today.</button>
-      <Spacer height={20} />
-      <a href="#experiences">See Other's Experiences</a>
-      <div style={{ height: 400 }}></div>
+      <Spacer height={45} />
+      <QuoteGrid>
+        {InternshipQuotes.map((quote, index) => (
+          <QuoteCard
+            gridArea={quote.grid}
+            quote={quote.quote}
+            author={quote.author}
+          />
+        ))}
+      </QuoteGrid>
+      <Spacer height={40} />
+      <button>Join the Team. Apply Today.</button>
     </InternshipStyles>
   );
 }

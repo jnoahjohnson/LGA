@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import CallToActionSection from "../componenents/CallToActionSection";
 import FullTimeSection from "../componenents/FullTimeSection";
 import InternshipSection from "../componenents/InternshipSection";
 import Page from "../componenents/Page";
@@ -71,6 +72,7 @@ export default function HiringPage() {
           <Spacer height={30} />
           {isInternships ? <InternshipSection /> : <FullTimeSection />}
         </HiringPageStyles>
+        <CallToActionSection />
       </main>
     </Page>
   );

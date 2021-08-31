@@ -35,7 +35,7 @@ export default function TeamSection({ sectionTitle, teamMembers }) {
     return imageUrlArray.join("");
   };
   return (
-    <div style={{ maxWidth: 1350, margin: "0 auto" }}>
+    <div style={{ maxWidth: 1250, margin: "0 auto" }}>
       <h1>{sectionTitle}</h1>
       <PersonGrid>
         {teamMembers.map(({ data }) => (
