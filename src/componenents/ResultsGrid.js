@@ -4,10 +4,11 @@ import styled from "styled-components";
 import DynamicImage from "./DynamicImage";
 
 const ResultCardStyles = styled.div`
-  background: #d6d6d6;
+  background: #e6e6e6;
   text-align: center;
   position: relative;
-
+  border: 4px solid var(--primary);
+  box-shadow: var(--defaultShadow);
   img {
     width: 200px;
     height: 100px;
@@ -20,7 +21,6 @@ const YearSection = styled.h1`
   background: var(--primary);
 
   padding: 0.5rem 2rem;
-  box-shadow: var(--defaultShadow);
   width: 100%;
 `;
 
