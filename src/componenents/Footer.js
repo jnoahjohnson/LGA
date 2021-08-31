@@ -68,7 +68,12 @@ const Footer = () => (
   <FooterStyles>
     <FooterContentStyles>
       <LeftSide>
-        <StaticImage src="../images/LGALogo.png" alt="Logan Growth Advisors" />
+        <StaticImage
+          src="../images/LGALogo.png"
+          alt="Logan Growth Advisors"
+          width={250}
+          objectFit="contain"
+        />
         <LinkContainer>
           <Link to="/">Privacy Policy</Link>
           <Link to="/">Terms of Use</Link>
