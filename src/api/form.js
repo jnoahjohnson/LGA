@@ -28,6 +28,7 @@ export default function formSubmit(req, res) {
           fields: {
             Name: data.name,
             Email: data.email,
+            Phone: data.phone,
             Message: data.message,
           },
         },
